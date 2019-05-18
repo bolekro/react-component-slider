@@ -16,8 +16,8 @@ class ComponentSlider extends React.Component {
   };
 
   static defaultProps = {
-    renderLeftArrow: () => <span>&larr;</span>,
-    renderRightArrow: () => <span>&rarr;</span>,
+    renderLeftArrow: () => <i className="fe fe-chevron-left" /> ,
+    renderRightArrow: () => <i className="fe fe-chevron-right" /> ,
   };
 
   constructor(props) {
@@ -113,7 +113,7 @@ class ComponentSlider extends React.Component {
   renderLeftArrow = () => {
     if (this.state.marginLeft !== 0) {
       return (
-        <button className="caret caret-left" onClick={this.handleLeftClicked}>
+        <button className="btn btn-rounded-circle btn-white btn-slide-left d-none d-lg-block" onClick={this.handleLeftClicked}>
           {this.props.renderLeftArrow()}
         </button>
       );
@@ -134,7 +134,7 @@ class ComponentSlider extends React.Component {
 
     if (remainingWidth > 0) {
       return (
-        <button className="caret caret-right" onClick={this.handleRightClicked}>
+        <button className="btn btn-rounded-circle btn-white btn-slide-right d-none d-lg-block" onClick={this.handleRightClicked}>
           {this.props.renderRightArrow()}
         </button>
       );
